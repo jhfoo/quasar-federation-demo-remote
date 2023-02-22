@@ -3,8 +3,14 @@ steps:
     command: env
   - wait
   - label: "Install dependencies"
-    command: npm i
+    command: 
+    - npm i
+    - tar -czvf node_modules.tar.gz ./node_modules
+    artifact_paths: node_modules.tar.gz
   - wait
   - label: Build
-    command: npm run build
+    command:
+    - buildkite-agent artifact download node_modules.tar.gz .
+    - tar -xzvf node_modules.tar.gz
+    - npm run build
   - wait
