@@ -1,3 +1,6 @@
 steps:
   - label: "Triggering pipelines"
     command: env
+  - wait
+  - label: "Install dependencies"
+    command: npm i
