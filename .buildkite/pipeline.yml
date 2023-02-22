@@ -4,3 +4,4 @@ steps:
   - wait
   - label: "Install dependencies"
     command: npm i
+  - wait
