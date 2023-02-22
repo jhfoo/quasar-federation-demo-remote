@@ -13,4 +13,6 @@ steps:
     - buildkite-agent artifact download node_modules.tar.gz .
     - tar -xzvf node_modules.tar.gz
     - npm run build
+    - tar -czvf dist.tar.gz ./dist
+    artifact_paths: dist.tar.gz
   - wait
