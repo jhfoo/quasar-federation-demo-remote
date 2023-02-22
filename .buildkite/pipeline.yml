@@ -5,3 +5,6 @@ steps:
   - label: "Install dependencies"
     command: npm i
   - wait
+  - label: Build
+    command: npm run build
+  - wait
